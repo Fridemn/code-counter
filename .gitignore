@@ -1,0 +1,12 @@
+node_modules
+package-lock.json
+Fridemn-0.0.1.vsix
+npminstall-debug.log
+webpack.config.js
+vsc-extension-quickstart.md
+tsconfig.json
+ChangeLog.md
+.vscode
+.vscodeignore
+.vscode-test.mjs
+.eslintrc.json
