@@ -1,10 +1,9 @@
-import * as vscode from 'vscode';
-import * as fs from 'fs';
-import * as path from 'path';
+const vscode = require('vscode');
+const fs = require('fs');
+const path = require('path');
 
-let CodeVolume: { [language: string]: number } = {};
+let CodeVolume = {};
 const dataFilePath = path.join(__dirname, 'codeVolume.json');
-
 
 function initializeDataFile() {
     if (!fs.existsSync(dataFilePath)) {
@@ -16,19 +15,17 @@ function initializeDataFile() {
     }
 }
 
-
 function updateDataFile() {
     const data = { CodeVolume };
     fs.writeFileSync(dataFilePath, JSON.stringify(data, null, 2));
 }
 
-
-export function activate(context: vscode.ExtensionContext) {
+function activate(context) {
     console.log('Congratulations, your extension "code-counter" is now active!');
 
     initializeDataFile();
 
-    const showCodeCounterCommand = vscode.commands.registerCommand('Code-counter.shCnt', () => {
+    const showCodeCounterCommand = vscode.commands.registerCommand('code-counter.showCounter', () => {
         const counts = Object.entries(CodeVolume)
             .map(([language, count]) => `${language}: ${count}`)
             .join(', ');
@@ -36,13 +33,17 @@ export function activate(context: vscode.ExtensionContext) {
     });
     context.subscriptions.push(showCodeCounterCommand);
 
-    
     vscode.workspace.onDidChangeTextDocument(event => {
+        const activeEditor = vscode.window.activeTextEditor;
+        if (!activeEditor || event.document !== activeEditor.document) {
+            return; // 如果事件的文档不是活动编辑器的文档，则不统计
+        }
+    
         const language = event.document.languageId;
         if (!CodeVolume[language]) {
             CodeVolume[language] = 0;
         }
-
+    
         for (const change of event.contentChanges) {
             const text = change.text;
             for (const char of text) {
@@ -55,4 +56,9 @@ export function activate(context: vscode.ExtensionContext) {
     });
 }
 
-export function deactivate() {}
+function deactivate() {}
+
+module.exports = {
+    activate,
+    deactivate
+};

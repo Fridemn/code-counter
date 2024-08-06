@@ -1,15 +1,65 @@
-# 简介
-这是一个根据按下Enter的次数来记录代码量的VScode小插件，使用json文件存储数据，删除后则数据清空。
-# 使用方法
-* VScode应用安装插件`code-counter`
-* 每次打开vscode时插件会自启动
-* 在VSCode中按下Ctrl+Shift+P，输入"shCnt",即可查询已记录的代码量
-# 没了
+# Fridemn README
 
-# Introduction
-This is a small plugin of VScode that records the amount of code based on the number of times Enter is pressed. The data is stored in a json file, and the data is cleared after deletion.
-# How to use
-* Install the plugin `code-counter` in the VScode application
-* The plugin will start automatically every time you open vscode
-* Press Ctrl+Shift+P in VSCode, enter "shCnt", you can query the recorded code amount
-# That's all
+This is the README for your extension "Fridemn". After writing up a brief description, we recommend including the following sections.
+
+## Features
+
+Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+
+For example if there is an image subfolder under your extension project workspace:
+
+\!\[feature X\]\(images/feature-x.png\)
+
+> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+
+## Requirements
+
+If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+
+## Extension Settings
+
+Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+
+For example:
+
+This extension contributes the following settings:
+
+* `myExtension.enable`: Enable/disable this extension.
+* `myExtension.thing`: Set to `blah` to do something.
+
+## Known Issues
+
+Calling out known issues can help limit users opening duplicate issues against your extension.
+
+## Release Notes
+
+Users appreciate release notes as you update your extension.
+
+### 1.0.0
+
+Initial release of ...
+
+### 1.0.1
+
+Fixed issue #.
+
+### 1.1.0
+
+Added features X, Y, and Z.
+
+---
+
+## Working with Markdown
+
+You can author your README using Visual Studio Code.  Here are some useful editor keyboard shortcuts:
+
+* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux)
+* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux)
+* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets
+
+## For more information
+
+* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
+* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
+
+**Enjoy!**
